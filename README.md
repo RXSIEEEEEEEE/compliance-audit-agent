@@ -6,24 +6,26 @@ An enterprise-grade, asynchronous AI compliance auditing system that analyzes co
 
 ## System Architecture
 
+```
 [Client / API Request]
-│ (JSON Clauses)
-▼
+       │ (JSON Clauses)
+       ▼
 [FastAPI Asynchronous Gateway] ─── (Background Worker)
-│
-▼
+       │
+       ▼
 [Hybrid RAG Engine]
-├── Dense Vector Retrieval (Qdrant + MiniLM-L6-v2)
-├── Sparse Keyword Retrieval (BM25Okapi)
-└── Reciprocal Rank Fusion (RRF Ranking)
-│
-▼ (Retrieved Legal Context)
+ ├── Dense Vector Retrieval (Qdrant + MiniLM-L6-v2)
+ ├── Sparse Keyword Retrieval (BM25Okapi)
+ └── Reciprocal Rank Fusion (RRF Ranking)
+       │
+       ▼ (Retrieved Legal Context)
 [Compliance Auditor Agent]
-├── Automated Model Fallback & Exponential Backoff (Fault Tolerance)
-└── Pydantic Structured Output Enforcement
-│
-▼
+ ├── Automated Model Fallback & Exponential Backoff (Fault Tolerance)
+ └── Pydantic Structured Output Enforcement
+       │
+       ▼
 [Audit Report Output] (Risk Score 1-10, Violations, Actionable Remediations)
+```
 
 ---
 
