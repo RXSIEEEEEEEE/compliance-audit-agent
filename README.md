@@ -4,7 +4,7 @@ An enterprise-grade, asynchronous AI compliance auditing system that analyzes co
 
 ---
 
-## 📌 System Architecture
+## System Architecture
 
 [Client / API Request]
 │ (JSON Clauses)
@@ -27,7 +27,7 @@ An enterprise-grade, asynchronous AI compliance auditing system that analyzes co
 
 ---
 
-## 🚀 Key Engineering Features
+## Key Engineering Features
 
 - **Hybrid Retrieval (Dense + BM25):** Combines semantic vector search with keyword matching via Reciprocal Rank Fusion (RRF) to eliminate missing domain-specific clauses.
 - **Asynchronous Execution:** Non-blocking job processing via FastAPI background tasks, responding immediately with tracking Job IDs.
@@ -37,7 +37,7 @@ An enterprise-grade, asynchronous AI compliance auditing system that analyzes co
 
 ---
 
-## 📊 Benchmark & Evaluation Results
+## Benchmark & Evaluation Results
 
 Evaluated against the Golden Compliance Test Suite:
 
@@ -49,7 +49,7 @@ Evaluated against the Golden Compliance Test Suite:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Core & API:** Python 3.11+, FastAPI, Uvicorn, Pydantic v2
 - **Vector Storage:** Qdrant (Docker Container)
@@ -59,17 +59,17 @@ Evaluated against the Golden Compliance Test Suite:
 
 ---
 
-## 🚦 Quickstart
+## Quickstart
 
 1.Start Qdrant Vector DB:
    docker compose up -d
 
-1.Install Dependencies:
+2.Install Dependencies:
 pip install -r requirements.txt
 
-2.Run Automated Evaluation Benchmark
+3.Run Automated Evaluation Benchmark
 python -m tests.eval_benchmark
 
-3.Start the Production API
+4.Start the Production API
 uvicorn app.main:app --reload --port 8000
 Interactive API documentation available at `http://localhost:8000/docs`.
